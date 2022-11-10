@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linkdin clone</title>
+    <link rel="shortcut icon" href="/img/linkdinicon.png" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/a131e7076c.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background-color: whitesmoke;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        box-shadow: 0 5px 15px rgb(0, 0, 0, 0.35);
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .logo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .logo i {
+        font-size: 40px;
+        color: rgb(0, 132, 255);
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .search i {
+        font-size: 20px;
+        color: black;
+      }
+      .logo input[type="text"] {
+        width: 250px;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      nav ul li {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      nav ul li i {
+        font-size: 24px;
+        color: gray;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: gray;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .left_top1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid gray;
+      }
+      .left_top1 img {
+        border-radius: 50%;
+      }
+
+      .left_top2 {
+        border-bottom: 1px solid gray;
+      }
+      .left_top2 h4 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .left_top3 {
+        border-bottom: 1px solid gray;
+      }
+      .left_top4 {
+        margin-bottom: 10px;
+      }
+
+      .left_down h2 {
+        text-align: center;
+        border-top: 1px solid gray;
+      }
+      .left_down1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .middle > a {
+        font-size: 15px;
+        align-self: flex-end;
+      }
+
+      .middle_top1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .middle_top1 input[type="text"] {
+        width: 250px;
+        height: 30px;
+        border-radius: 20px;
+      }
+      .middle_top2 {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .middle_top img {
+        border-radius: 50%;
+      }
+      .middle_story1 {
+        display: flex;
+        flex-direction: column;
+      }
+      .middle_story1_sub {
+        display: flex;
+        align-items: center;
+      }
+      .middle_story > img {
+        width: 50%;
+        max-height: 50%;
+      }
+      .middle_story1_sub > img {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+      }
+      .middle_story1 a {
+        margin-left: auto;
+      }
+      .middle_story2 {
+        display: flex;
+        justify-content: space-evenly;
+        border-top: 1px solid gray;
+        margin: 20px 0px;
+      }
+      .middle > button {
+        border-radius: 30px;
+        color: black;
+        background-color: white;
+        padding: 10px 0px;
+        font-weight: bold;
+      }
+      .right_top ul li {
+        margin-bottom: 20px;
+      }
+      .right_down {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .right_down .right_down1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .right_down1 img:first-child {
+        margin-right: 50px;
+        border-radius: 50%;
+      }
+      .right_down1 img:last-child {
+        width: 60px;
+      }
+      .right_down > button {
+        width: 150px;
+        font-size: large;
+        border: 1px solid rgb(0, 132, 255);
+        padding: 10px;
+        border-radius: 30px;
+        color: rgb(0, 132, 255);
+        background-color: white;
+      }
+
+      .left > * {
+        border-radius: 10px;
+      }
+      .middle > * {
+        border-radius: 10px;
+      }
+      .right > * {
+        border-radius: 10px;
+      }
+      .left,
+      .middle,
+      .right {
+        flex-grow: 1;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .left_top,
+      .middle_top,
+      .right_top {
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgb(0, 0, 0, 0.35);
+      }
+
+      .left_down,
+      .middle_story,
+      .right_down {
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgb(0, 0, 0, 0.35);
+      }
+      footer {
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgb(0, 0, 0, 0.35);
+        margin-top: 10px;
+      }
+      .foot_up ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style: none;
+        font-weight: bold;
+      }
+      .foot_down {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fa-brands fa-linkedin"></i>
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text" name="serach" id="serach" placeholder="Search" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <i class="fa-solid fa-house-chimney"></i>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-network-wired"></i>
+            <a href="">My Network</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-briefcase"></i>
+            <a href="">Jobs</a>
+          </li>
+          <li>
+            <i class="fa-sharp fa-solid fa-comment-dots"></i>
+            <a href="">Messaging</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-bell"></i>
+            <a href="">Notifications</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-user"></i>
+            <a href="">Me&nbsp;⮟</a>
+          </li>
+          <li>
+            <img src="./img/linkdinwork.png" alt="" />
+            <a href="">Work&nbsp;⮟</a>
+          </li>
+          <li><a href="">Try Premium For Free</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="left">
+        <div class="left_top">
+          <div class="left_top_same left_top1">
+            <img src="./img/appreview2.png" alt="" />
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+          <div class="left_top_same left_top2">
+            <h4>Connections <span>100</span></h4>
+            <h4>Grow Your network</h4>
+          </div>
+          <div class="left_top_same left_top3">
+            <p>Access exclusive tools & insides</p>
+            <a href="">Try Premium for free</a>
+          </div>
+          <div class="left_top_same left_top4">
+            <span>My Items</span>
+          </div>
+        </div>
+
+        <div class="left_down">
+          <h3>Groups</h3>
+
+          <div class="left_down1">
+            <h3>Events</h3>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+
+          <h3>Followed Hashtags</h3>
+
+          <h2>Discover More</h2>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="middle_top">
+          <div class="middle_top1">
+            <img src="./img/appreview2.png" alt="" />
+            <input type="text" name="" id="" placeholder="Start a post" />
+          </div>
+
+          <div class="middle_top2">
+            <span><i class="fa-regular fa-image"></i>&nbsp;&nbsp;Photo</span>
+            <span><i class="fa-brands fa-youtube"></i>&nbsp;&nbsp;Video</span>
+            <span
+              ><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;Event</span
+            >
+            <span
+              ><i class="fa-solid fa-newspaper"></i>&nbsp;&nbsp;Write
+              Article</span
+            >
+          </div>
+        </div>
+
+        <a href="">Sortby: Top</a>
+
+        <div class="middle_story">
+          <div class="middle_story1">
+            <div class="middle_story1_sub">
+              <img src="./img/linkdinpostprofile.webp" alt="profilelogo" />
+
+              <div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <h5>457,134 followers</h5>
+                <h5>
+                  3h.ago&nbsp;&nbsp;<i class="fa-solid fa-earth-asia"></i>
+                </h5>
+              </div>
+            </div>
+            <a href=""><i class="fa-solid fa-ellipsis"></i></a>
+
+            <img src="./img/linkdinpost.png" alt="" />
+
+            <div class="middle_story2">
+              <span><i class="fa-solid fa-thumbs-up"></i>&nbsp;Like</span>
+              <span
+                ><i class="fa-sharp fa-solid fa-comment"></i>&nbsp;Comment
+              </span>
+              <span
+                ><i class="fa-solid fa-code-pull-request"></i
+                >&nbsp;Request</span
+              >
+              <span><i class="fa-solid fa-paper-plane"></i>&nbsp;Send</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle_story">
+          <div class="middle_story1">
+            <div class="middle_story1_sub">
+              <img src="./img/linkdinpostprofile.webp" alt="profilelogo" />
+
+              <div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <h5>457,134 followers</h5>
+                <h5>
+                  3h.ago&nbsp;&nbsp;<i class="fa-solid fa-earth-asia"></i>
+                </h5>
+              </div>
+            </div>
+            <a href=""><i class="fa-solid fa-ellipsis"></i></a>
+
+            <img src="./img/linkdinpost1.jfif" alt="" />
+
+            <div class="middle_story2">
+              <span><i class="fa-solid fa-thumbs-up"></i>&nbsp;Like</span>
+              <span
+                ><i class="fa-sharp fa-solid fa-comment"></i>&nbsp;Comment
+              </span>
+              <span
+                ><i class="fa-solid fa-code-pull-request"></i
+                >&nbsp;Request</span
+              >
+              <span><i class="fa-solid fa-paper-plane"></i>&nbsp;Send</span>
+            </div>
+          </div>
+        </div>
+
+        <button>Show More Feed Updates</button>
+      </div>
+      <div class="right">
+        <div class="right_top">
+          <h3>Linkdin News</h3>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet.
+              <p>Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet.
+              <p>Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet.
+              <p>Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet.
+              <p>Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet.
+              <p>Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet.
+              <p>Lorem ipsum dolor sit amet.</p>
+            </li>
+          </ul>
+          <h4>Show More&nbsp;⮟</h4>
+        </div>
+
+        <div class="right_down">
+          <a href=""
+            >Ad &nbsp; <span><i class="fa-solid fa-ellipsis"></i></span>
+          </a>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <div class="right_down1">
+            <img src="./img/appreview2.png" alt="" />
+            <img src="./img/linkdinicon.png" alt="" />
+          </div>
+          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
+          <button>Learn More</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="foot_up">
+        <ul>
+          <li>About</li>
+          <li>Accessibility</li>
+          <li>Help Center</li>
+          <li>Privacy & Terms</li>
+          <li>Ad Choices</li>
+        </ul>
+
+        <ul>
+          <li>Advertising</li>
+          <li>Business Services</li>
+          <li>Get the Linkdin app</li>
+          <li>More</li>
+        </ul>
+      </div>
+      <div class="foot_down">
+        <h3>Linkdin Corporation @ 2022 &nbsp;&nbsp;Created By Roshan</h3>
+      </div>
+    </footer>
+  </body>
+</html>
