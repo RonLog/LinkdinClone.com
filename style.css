@@ -64,7 +64,7 @@ nav ul li {
 
 nav ul li i {
     font-size: 24px;
-    color: gray;
+    color: rgb(24, 49, 83);
 }
 
 nav ul li a {
@@ -143,6 +143,23 @@ main {
 
 .middle_top img {
     border-radius: 50%;
+}
+
+.scroll {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.scroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll::-webkit-scrollbar {
+    display: none;
 }
 
 .middle_story1 {
