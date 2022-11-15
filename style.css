@@ -49,6 +49,18 @@ header {
     border-radius: 5px;
 }
 
+.msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.msg:hover * {
+    color: rgb(0, 132, 255);
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -66,17 +78,14 @@ nav ul li:hover * {
     color: rgb(0, 132, 255);
 }
 
-nav ul li i {
+nav ul li i,
+.msg i {
     font-size: 24px;
     color: rgb(24, 49, 83);
 }
 
-nav ul li i {
-    font-size: 24px;
-    color: rgb(24, 49, 83);
-}
-
-nav ul li a {
+nav ul li a,
+.msg a {
     text-decoration: none;
     color: gray;
 }
@@ -280,6 +289,17 @@ main {
 
 .right_top ul li {
     margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.right_top ul li p {
+    font-size: 10px;
+    color: gray;
+}
+
+.right_top>h4 {
+    font-size: 15px;
+    color: gray;
 }
 
 .right_down {
@@ -379,6 +399,43 @@ footer {
     text-align: center;
 }
 
+.base {
+    border-radius: 10px;
+    border: 1px solid gray;
+    display: none;
+}
+
+.base ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.base ul li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.base ul li:hover * {
+    color: rgb(0, 132, 255);
+}
+
+.base ul li i {
+    font-size: 20px;
+    color: gray;
+}
+
+.base ul li a {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}
+
 @media screen and (max-width: 1024px) {
 
     .left,
@@ -390,5 +447,19 @@ footer {
     main {
         width: auto;
         margin: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .base {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .msg {
+        display: flex;
     }
 }
