@@ -400,6 +400,14 @@ footer {
     text-align: center;
 }
 
+.foot_down h3 span {
+    color: rgb(0, 132, 255);
+}
+
+.foot_down h3 i {
+    font-size: 20px;
+}
+
 .base {
     border-radius: 10px;
     border: 1px solid gray;
