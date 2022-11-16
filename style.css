@@ -414,6 +414,7 @@ footer {
     display: none;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100vw;
     background-color: white;
 }
@@ -465,6 +466,7 @@ footer {
     header {
         position: fixed;
         top: 0;
+        left: 0;
         width: 100vw;
         background-color: white;
     }
